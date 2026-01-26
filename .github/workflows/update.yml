@@ -25,7 +25,7 @@ jobs:
         run: |
           dpkg-scanpackages -m ./debs > Packages
           # تأكد من تغيير رابط الدومين أدناه
-          sed -i '/Filename:/a SileoDepiction: https://yourdomain.com/global_depiction.json' Packages
+          sed -i '/Filename:/a SileoDepiction: https://xif66x.xyz/global_depiction.json' Packages
           bzip2 -c Packages > Packages.bz2
 
       - name: Push Changes
