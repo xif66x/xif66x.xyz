@@ -10,38 +10,33 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
-    permissions: 
+    permissions:
       contents: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 
+          fetch-depth: 0
 
       - name: Install Dependencies
-        run: sudo apt-get install dpkg-dev bzip2
+        run: sudo apt-get update && sudo apt-get install -y dpkg-dev bzip2
 
       - name: Update Packages File
         run: |
-         - name: Update Packages File
-        run: |
-        
+          # توليد ملف Packages
           dpkg-scanpackages -m ./debs > Packages
           
-    
+          # إضافة البنر الموحد تلقائياً (استبدل yourdomain.com برابطك)
           sed -i '/Filename:/a SileoDepiction: https://yourdomain.com/global_depiction.json' Packages
           
-         
+          # ضغط الملفات
           bzip2 -c Packages > Packages.bz2
+
       - name: Push Changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add Packages Packages.bz2
-          
-         
           git pull --rebase origin main
-          
-          git commit -m "Auto-update Packages [skip ci]" || echo "No changes to commit"
+          git commit -m "Auto-update Packages with Banner [skip ci]" || echo "No changes"
           git push origin main
-ا
