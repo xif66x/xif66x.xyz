@@ -23,9 +23,16 @@ jobs:
 
       - name: Update Packages File
         run: |
+         - name: Update Packages File
+        run: |
+        
           dpkg-scanpackages -m ./debs > Packages
+          
+    
+          sed -i '/Filename:/a SileoDepiction: https://yourdomain.com/global_depiction.json' Packages
+          
+         
           bzip2 -c Packages > Packages.bz2
-
       - name: Push Changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
