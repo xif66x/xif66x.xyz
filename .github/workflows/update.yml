@@ -23,19 +23,33 @@ jobs:
 
       - name: Update Packages File
         run: |
+          # 1. حذف الملفات القديمة لضمان التحديث
+          rm -f Packages Packages.bz2
+          
+          # 2. توليد ملف Packages جديد
           dpkg-scanpackages -m ./debs > Packages
-          # تأكد من تغيير رابط الدومين أدناه
-          sed -i '/Filename:/a SileoDepiction: https://xif66x.xyz/global_depiction.json' Packages
+          
+          # 3. التحقق من وجود محتوى في الملف قبل الإكمال
+          if [ ! -s Packages ]; then
+            echo "Error: Packages file is empty. Check your debs folder."
+            exit 1
+          fi
+
+          # 4. إضافة البنر الموحد (استبدل الدومين برابطك الحقيقي)
+          # نستخدم هنا طريقة إضافة السطر في نهاية كل قسم بيانات أداة
+          sed -i '/Architecture:/a SileoDepiction: https://xif66x.xyz/global_depiction.json' Packages
+          
+          # 5. ضغط الملف
           bzip2 -c Packages > Packages.bz2
 
       - name: Push Changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add Packages Packages.bz2
-          # حل مشكلة التعارض (الصورة 3): تخزين التعديلات مؤقتاً ثم سحب الجديد ثم استعادتها
-          git stash
+          
+          # سحب آخر التغييرات لتجنب التعارض
           git pull --rebase origin main
-          git stash pop || echo "No stash to pop"
+          
+          git add Packages Packages.bz2
           git commit -m "Auto-update Packages [skip ci]" || echo "No changes to commit"
           git push origin main
