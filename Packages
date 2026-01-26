@@ -30,3 +30,21 @@ Description: اضافه رر التحميل وازاله الاعلانات
 Author: yousef alhadidi <insta@xif66x>
 Name: anime cloud
 
+Package: dev.zero.wicked
+Version: 3.0b10
+Architecture: iphoneos-arm64
+Maintainer: zero
+Installed-Size: 19416
+Conflicts: dev.zero.wisp
+Replaces: dev.zero.wisp
+Filename: ./debs/wicked.deb
+Size: 7980862
+MD5sum: 2d84d6ea71cde2a30d920342378905e0
+SHA1: 89617c2a6bc2fac6507b858e93d727e6a6e97eb9
+SHA256: 7bc27e6cd72f6b5d8c3e31070ee1712f61e696bd136f3995cf3777b0ff511982
+Section: Development
+Description: wicked
+Author: zero
+Icon: https://raw.githubusercontent.com/HearseDev/hearsedev.github.io/main/tweak-assets/Wicked_2048x2048.png
+Name: wicked
+
