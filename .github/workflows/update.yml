@@ -1,0 +1,33 @@
+name: Repo Auto Update
+
+on:
+  push:
+    branches:
+      - main  
+    paths:
+      - 'debs/**' 
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: sudo apt-get install dpkg-dev bzip2
+
+      - name: Update Packages File
+        run: |
+          # توليد ملف Packages من مجلد debs
+          dpkg-scanpackages -m ./debs > Packages
+          # إنشاء نسخة مضغوطة bz2 للسيديا
+          bzip2 -c Packages > Packages.bz2
+
+      - name: Push Changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add Packages Packages.bz2
+          git commit -m "Auto-update Packages [skip ci]"
+          git push
