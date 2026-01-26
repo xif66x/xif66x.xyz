@@ -23,13 +23,9 @@ jobs:
 
       - name: Update Packages File
         run: |
-          # توليد ملف Packages
           dpkg-scanpackages -m ./debs > Packages
-          
-          # إضافة البنر الموحد تلقائياً (استبدل yourdomain.com برابطك)
+          # تأكد من تغيير رابط الدومين أدناه
           sed -i '/Filename:/a SileoDepiction: https://yourdomain.com/global_depiction.json' Packages
-          
-          # ضغط الملفات
           bzip2 -c Packages > Packages.bz2
 
       - name: Push Changes
@@ -37,6 +33,9 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add Packages Packages.bz2
+          # حل مشكلة التعارض (الصورة 3): تخزين التعديلات مؤقتاً ثم سحب الجديد ثم استعادتها
+          git stash
           git pull --rebase origin main
-          git commit -m "Auto-update Packages with Banner [skip ci]" || echo "No changes"
+          git stash pop || echo "No stash to pop"
+          git commit -m "Auto-update Packages [skip ci]" || echo "No changes to commit"
           git push origin main
