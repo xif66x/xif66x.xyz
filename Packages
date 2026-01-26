@@ -1,0 +1,202 @@
+Package: wiki.qaq.writenow
+Version: 2.0
+Architecture: iphoneos-arm64
+Maintainer: 
+Description: wiki.qaq.writenow package for iOS
+Section: Tweaks
+Filename: ./debs/wiki.qaq.writenow_2.0_iphoneos-arm64.deb
+Size: 3223740
+Installed-Size: 3148
+MD5sum: 44bca44b4e510615b965f72ce6d2a612
+SHA1: c93045e0264c404e5ab61b68948d1ea576a4406e
+SHA256: 5e33d66809b6c56fd6362495dfe91f902c7078f2cfb8b73a7a73d8fa16a5e46d
+Name: wiki.qaq.writenow
+
+Package: com.ali.aimpro
+Version: 1.1
+Architecture: iphoneos-arm64
+Maintainer: 
+Description: com.ali.aimpro package for iOS
+Section: Tweaks
+Filename: ./debs/com.ali.aimpro_1.1_iphoneos-arm64.deb
+Size: 2320644
+Installed-Size: 2266
+MD5sum: e6c89746360ce124d8b1ef780a43b6bb
+SHA1: 99034e6c145860605fca250cd5473728fa27a7a3
+SHA256: b1da21422e80eb1132f645c319e012919d0f392f447f17c08de3e49c0aab1cef
+Name: com.ali.aimpro
+
+Package: com.bank5ia.iosx
+Version: 0.6.1
+Architecture: iphoneos-arm
+Maintainer: 
+Description: com.bank5ia.iosx package for iOS
+Section: Tweaks
+Filename: ./debs/com.bank5ia.iosx_0.6.1_iphoneos-arm.deb
+Size: 8223792
+Installed-Size: 8031
+MD5sum: 8f52c0786b21d5b378be4c6acc62ddaa
+SHA1: a298ff5540ed49a93935391724788742c8299424
+SHA256: 5d40d9d72a7fb948dc53c7d2c126cad04ec2d92555a349df653c4812db081d0b
+Name: com.bank5ia.iosx
+
+Package: com.bossgfx.elysian
+Version: 1.4.1
+Architecture: iphoneos-arm
+Maintainer: 
+Description: com.bossgfx.elysian package for iOS
+Section: Tweaks
+Filename: ./debs/com.bossgfx.elysian_1.4.1_iphoneos-arm.deb
+Size: 31476704
+Installed-Size: 30738
+MD5sum: e90f1cb009cd717cb5b8791db0b741ab
+SHA1: c986d79a97dc592bdf19809aae71b4c1f3d20f14
+SHA256: e0e9af24cd4ad55f0c0beddc210b150fa8c72694edf048e025ec21096b153288
+Name: com.bossgfx.elysian
+Icon: https://raw.githubusercontent.com/xif66x/xif66x.github.io/main/icons/com.bossgfx.elysian.png
+Header: https://raw.githubusercontent.com/xif66x/xif66x.github.io/main/headers/com.bossgfx.elysian.png
+
+Package: com.yousefalhadidi.yacinetv
+Version: 1.0
+Architecture: iphoneos-arm64
+Maintainer: 
+Description: هاك لتطبيق yacintv
+Section: Tweaks
+Filename: ./debs/com.yousefalhadidi.yacinetv_1.0+debug_iphoneos-arm64.deb
+Size: 8174
+Installed-Size: 7
+MD5sum: d401515018f31ea355475e32e990a7ef
+SHA1: b2012b34507da8364a99e8744bf72598d6ccc983
+SHA256: 01fe16dc47c8fa16fabb13189ba5a9b967598b665d441457d07910611ed2d0b9
+Name: com.yousefalhadidi.yacinetv
+Icon: https://raw.githubusercontent.com/xif66x/xif66x.github.io/main/icons/com.yousefalhadidi.yacinetv.png
+Header: https://raw.githubusercontent.com/xif66x/xif66x.github.io/main/headers/com.yousefalhadidi.yacinetv.png
+
+Package: com.yousefalhadidi.yacinetv11
+Version: 1.0
+Architecture: iphoneos-arm64
+Maintainer: 
+Description: هاك للتطبيق 
+Section: Tweaks
+Filename: ./debs/com.yousefalhadidi.yacinetv11_1.0+debug_iphoneos-arm64.deb
+Size: 165332
+Installed-Size: 161
+MD5sum: 53e2f4c1cce54ad1e4612bc731621222
+SHA1: c0e878d93f41a88be2a697b521995f954c6fe3e7
+SHA256: 78ad67adee2a20f1ff54d12e29d550fe3e98f3f5c2d842feba1e7d327ed60d01
+Name: com.yousefalhadidi.yacinetv11
+Header: https://raw.githubusercontent.com/xif66x/xif66x.github.io/main/headers/com.yousefalhadidi.yacinetv11.png
+
+Package: com.leftyfl1p.carbridge13
+Version: v2.0.15
+Architecture: iphoneos-arm64
+Maintainer: 
+Description: com.leftyfl1p.carbridge13 package for iOS
+Section: Tweaks
+Filename: ./debs/com.leftyfl1p.carbridge13_v2.0.15_iphoneos-arm64.deb
+Size: 434014
+Installed-Size: 423
+MD5sum: 41d08859adf77ad7c97293b8202c38c3
+SHA1: 8713093819e84c9cb846b46cdcf9994d881d9e76
+SHA256: 4315b6d97ef2b07e47cc9d7e3b1b70a16692f42e30dd99122141bb3521ddb5a1
+Name: com.leftyfl1p.carbridge13
+
+Package: com.yousefalhadidi.animecloud
+Version: 1.0
+Architecture: iphoneos-arm64
+Maintainer: 
+Description: com.yousefalhadidi.animecloud package for iOS
+Section: Tweaks
+Filename: ./debs/com.yousefalhadidi.animecloud_1.0+debug_iphoneos-arm64.deb
+Size: 8802
+Installed-Size: 8
+MD5sum: 10f70cd3a4a4b67bfa795a985cb7f091
+SHA1: c33fc9c1a9a4cda705abdb1547ad297929284e56
+SHA256: 4a974083a68a6be492efd0a39e03bc9ce6cd8c1376aa110620bc62c104c6ba04
+Name: com.yousefalhadidi.animecloud
+
+Package: com.me.iosx
+Version: 0.6.1
+Architecture: iphoneos-arm
+Maintainer: 
+Description: com.me.iosx package for iOS
+Section: Tweaks
+Filename: ./debs/com.bank5ia.iosx_0.6.1_iphoneos-arm.deb
+Size: 8223792
+Installed-Size: 8031
+MD5sum: 8f52c0786b21d5b378be4c6acc62ddaa
+SHA1: a298ff5540ed49a93935391724788742c8299424
+SHA256: 5d40d9d72a7fb948dc53c7d2c126cad04ec2d92555a349df653c4812db081d0b
+Name: com.me.iosx
+
+Package: WATranslator
+Version: 
+Architecture: iphoneos-arm
+Maintainer: 
+Description: WATranslator package for iOS
+Section: Tweaks
+Filename: ./debs/WATranslator_RootHide.deb
+Size: 27144
+Installed-Size: 26
+MD5sum: 39fafd5b9b8b72278228fd26cc0bb27c
+SHA1: c1f42885a40a0cf0a06af7b1cc4aeff19a70dfed
+SHA256: 4ff20576a9662074685ffbe20cb4b8d0f6969f8c148495f5ba96893e721632a7
+Name: WATranslator
+Icon: https://raw.githubusercontent.com/xif66x/xif66x.github.io/main/icons/WATranslator.png
+
+Package: lowerinstall.deb
+Version: 
+Architecture: iphoneos-arm
+Maintainer: 
+Description: lowerinstall.deb package for iOS
+Section: Tweaks
+Filename: ./debs/lowerinstall.deb
+Size: 49800
+Installed-Size: 48
+MD5sum: a87a1058ae740678a11b8e1e350e1a5c
+SHA1: 8ca33b8fb99fcf2cf2f2ace1ab01baff8890144a
+SHA256: 10e8381deda5cc3d245125e9d24e9395e089721565cd591287a9d6f130e07a3e
+Name: lowerinstall.deb
+
+Package: lowerinstall beta 6
+Version: 
+Architecture: iphoneos-arm
+Maintainer: 
+Description: 😀😀
+Section: Tweaks
+Filename: ./debs/lowerinstall.deb
+Size: 49800
+Installed-Size: 48
+MD5sum: a87a1058ae740678a11b8e1e350e1a5c
+SHA1: 8ca33b8fb99fcf2cf2f2ace1ab01baff8890144a
+SHA256: 10e8381deda5cc3d245125e9d24e9395e089721565cd591287a9d6f130e07a3e
+Name: lowerinstall beta 6 <📵>
+
+Package: dev.mineek.appstoretroller
+Version: 0.0.1
+Architecture: iphoneos-arm64
+Maintainer: 
+Description: dev.mineek.appstoretroller package for iOS
+Section: Tweaks
+Filename: ./debs/dev.mineek.appstoretroller_0.0.1_iphoneos-arm64.deb
+Size: 6752
+Installed-Size: 6
+MD5sum: 72cced8af6b06194c91a02db085c20f2
+SHA1: 580fc92ef3c0e39929b81cc37960c0f4325220f1
+SHA256: 55c5fdc48bbc375e5c4e6c9658f28fba8f9f84fd27ca99dfec1beb72ac88f6f6
+Name: dev.mineek.appstoretroller
+
+Package: appstoretroller
+Version: 0.0.1
+Architecture: iphoneos-arm64
+Maintainer: 
+Description: downlod from appstore
+Section: Tweaks
+Filename: ./debs/dev.mineek.appstoretroller_0.0.1_iphoneos-arm64.deb
+Size: 6752
+Installed-Size: 6
+MD5sum: 72cced8af6b06194c91a02db085c20f2
+SHA1: 580fc92ef3c0e39929b81cc37960c0f4325220f1
+SHA256: 55c5fdc48bbc375e5c4e6c9658f28fba8f9f84fd27ca99dfec1beb72ac88f6f6
+Name: appstoretroller
+

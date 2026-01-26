@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Language" content="en-us">
+  <meta name="description" content="Made by xif66x">
+  <title>xif66x Repo</title>
+
+  <style>
+    body {
+      background-color: #1e1e1e;
+      font-family: 'Consolas', monospace;
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .fade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .header {
+      margin-top: 30px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #f1c40f;
+    }
+
+    .highlight {
+      background-color: #2c3e50;
+      padding: 6px 12px;
+      border-radius: 6px;
+      color: #ffffff;
+      display: inline-block;
+      margin: 10px 0;
+    }
+
+    .gif-img {
+      max-width: 90%;
+      border-radius: 12px;
+      margin: 20px 0;
+      box-shadow: 0 0 12px #00000088;
+    }
+
+    .quote {
+      background-color: #27ae60;
+      padding: 12px 18px;
+      border-radius: 8px;
+      display: inline-block;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    .social {
+      margin: 25px 0;
+    }
+
+    .social a {
+      margin: 0 8px;
+      background-color: #34495e;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .repo-buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      color: white;
+    }
+
+    .sileo { background-color: #2ecc71; }
+    .zebra { background-color: #3498db; }
+    .cydia { background-color: #e67e22; }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #999;
+    }
+  </style>
+
+  <script>
+    // عند تحميل الصفحة، طبق التأثير التدريجي
+    window.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('.fade');
+      elements.forEach((el, index) => {
+        setTimeout(() => {
+          el.classList.add('show');
+        }, index * 200); // تأخير بسيط لكل عنصر
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+  <div class="header fade">
+    &gt; <span class="highlight">Made by Yousef (xif66x)</span> &lt;
+  </div>
+
+  <!-- صورة glitch -->
+  <img class="gif-img fade" src="https://l.top4top.io/p_3623m7v5q0.jpeg" alt="Glitch animation">
+
+  <!-- ترحيب -->
+  <p class="fade" style="font-size: 20px;">مرحباً، <span class="highlight">Hello</span></p>
+  <p class="fade" style="font-size: 16px;">With love . <span class="highlight"> All this was made</span></p>
+
+  <!-- اقتباس -->
+  <p class="quote fade">
+    قد تنظر لما أنظر، ولكنك لا ترى ما أرى.
+  </p>
+
+  <!-- روابط تواصل -->
+  <div class="social fade">
+    <a href="https://www.instagram.com/xif66x" target="_blank">📷 Instagram: @xif66x</a>
+    <a href="https://mobile.twitter.com/alfaylasoof95" target="_blank">🐦 Twitter: @alfaylasoof95</a>
+  </div>
+
+  <!-- أزرار الريبو -->
+  <div class="repo-buttons fade">
+    <a href="sileo://source/https://xif66x.github.io" class="sileo">🧬 Add to Sileo</a>
+    <a href="zbra://sources/add/https://xif66x.github.io" class="zebra">🦓 Add to Zebra</a>
+    <a href="cydia://url/https://xif66x.github.io" class="cydia">📦 Add to Cydia</a>
+  </div>
+
+  <!-- حكمة -->
+  <p class="highlight fade" style="margin-top: 30px; font-size: 18px;">
+    لا قيمة لآراء الناس مادامت أفعالك تمنحك ضميرًا مريحًا.
+  </p>
+
+  <footer class="fade">
+    &copy; 2025 xif66x – جميع الحقوق محفوظة
+  </footer>
+
+</body>
+</html>
