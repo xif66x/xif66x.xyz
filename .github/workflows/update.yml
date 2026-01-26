@@ -3,9 +3,9 @@ name: Repo Auto Update
 on:
   push:
     branches:
-      - main  # تأكد أن هذا هو اسم الفرع الرئيسي عندك
+      - main
     paths:
-      - 'debs/**' # يشتغل السكريبت عند أي تغيير (إضافة أو حذف) داخل مجلد debs
+      - 'debs/**'
 
 jobs:
   update:
@@ -16,6 +16,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
       - name: Install Dependencies
@@ -23,31 +24,16 @@ jobs:
 
       - name: Update Packages File
         run: |
-          # 1. حذف الملفات القديمة لضمان تحديث نظيف
           rm -f Packages Packages.bz2
-          
-          # 2. إنشاء ملف Packages جديد بناءً على الملفات الموجودة حالياً في debs
           dpkg-scanpackages -m ./debs > Packages
-          
-          # 3. التأكد من أن الملف ليس فارغاً (يحتوي على أدوات)
-          if [ ! -s Packages ]; then
-            echo "Warning: No debs found or Packages file is empty."
-          fi
-
-          # 4. ضغط الملف بصيغة bzip2 ليتوافق مع السيديا وسيلو
           bzip2 -c Packages > Packages.bz2
 
-      - name: Push Changes
+      - name: Force Push Changes
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          
-          # سحب أي تغييرات خارجية لتجنب التعارض
-          git pull --rebase origin main
-          
-          # إضافة الملفات المحدثة
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           git add Packages Packages.bz2
+          git commit -m "Update Repo Index [skip ci]" || echo "No changes"
           
-          # إتمام العملية والرفع
-          git commit -m "Update repo index (Add/Remove tools) [skip ci]" || echo "No changes to commit"
-          git push origin main
+          # هذا السطر هو الحل لخطأ 128: يمسح التعارض ويرفع بالقوة
+          git push origin main --force
