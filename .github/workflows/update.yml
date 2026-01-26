@@ -3,53 +3,31 @@ name: Repo Auto Update
 on:
   push:
     branches:
-      - main
+      - main  # إذا كان اسم فرعك master غيره إلى master
     paths:
-      - 'debs/**'
+      - 'debs/**' # السكريبت يشتغل فقط لما ترفع ملف داخل مجلد debs
 
 jobs:
   update:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Install Dependencies
-        run: sudo apt-get update && sudo apt-get install -y dpkg-dev bzip2
+        run: sudo apt-get install dpkg-dev bzip2
 
       - name: Update Packages File
         run: |
-          # 1. حذف الملفات القديمة لضمان التحديث
-          rm -f Packages Packages.bz2
-          
-          # 2. توليد ملف Packages جديد
+          # توليد ملف Packages من مجلد debs
           dpkg-scanpackages -m ./debs > Packages
-          
-          # 3. التحقق من وجود محتوى في الملف قبل الإكمال
-          if [ ! -s Packages ]; then
-            echo "Error: Packages file is empty. Check your debs folder."
-            exit 1
-          fi
-
-          # 4. إضافة البنر الموحد (استبدل الدومين برابطك الحقيقي)
-          # نستخدم هنا طريقة إضافة السطر في نهاية كل قسم بيانات أداة
-          sed -i '/Architecture:/a SileoDepiction: https://xif66x.xyz/global_depiction.json' Packages
-          
-          # 5. ضغط الملف
+          # إنشاء نسخة مضغوطة bz2 للسيديا
           bzip2 -c Packages > Packages.bz2
 
       - name: Push Changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          
-          # سحب آخر التغييرات لتجنب التعارض
-          git pull --rebase origin main
-          
           git add Packages Packages.bz2
-          git commit -m "Auto-update Packages [skip ci]" || echo "No changes to commit"
-          git push origin main
+          git commit -m "Auto-update Packages [skip ci]"
+          git push
