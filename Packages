@@ -14,3 +14,35 @@ Description: إضافات لتطبيق ANDM
 Author: yousef
 Name: ANDM
 
+Package: com.xif66x.dramatr
+Version: 1.0+debug
+Architecture: iphoneos-arm64
+Maintainer: xif66x <insta@xif66x>
+Installed-Size: 156
+Depends: mobilesubstrate
+Filename: ./debs/com.xif66x.dramatr.deb
+Size: 7816
+MD5sum: fbd520995c2c12332aee70ee27d693fb
+SHA1: a0771f66ae001a5fee0377ee757cd3da2475d0ae
+SHA256: 4ad876759e305cf5b843be8668d150c3cc06badc7c602bfce4439e936642dd60
+Section: Tweaks
+Description: Ø¥Ø²Ø§ÙØ© Ø§ÙØ§Ø¹ÙØ§ÙØ§Øª ÙÙ ØªØ·Ø¨ÙÙ Ø¯Ø±Ø§ÙØ§ ØªØ±ÙÙÙ
+Author: xif66x <insta@xif66x>
+Name: dramaTr
+
+Package: com.yousefalhadidi.animecloud
+Version: 1.0+debug
+Architecture: iphoneos-arm64
+Maintainer: yousef alhadidi <insta@xif66x>
+Installed-Size: 932
+Depends: mobilesubstrate
+Filename: ./debs/com.yousefalhadidi.animecloud_v1.0.deb
+Size: 165502
+MD5sum: 0911a03f599e82314901742c28454518
+SHA1: b1414fb1fabca720aacea59cf09e0f56ff93916d
+SHA256: 025d621300d7d3cbc96d23d483172f6b77a55a820226b838fe1fc1b59ad377ef
+Section: Tweaks
+Description: اضافه رر التحميل وازاله الاعلانات
+Author: yousef alhadidi <insta@xif66x>
+Name: anime cloud
+
