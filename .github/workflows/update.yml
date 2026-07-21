@@ -1,39 +1,32 @@
-name: Repo Auto Update
+name: Update Repo Packages
 
 on:
   push:
-    branches:
-      - main
     paths:
-      - 'debs/**'
+      - 'debs/**/*.deb'
 
 jobs:
-  update:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Install Dependencies
-        run: sudo apt-get update && sudo apt-get install -y dpkg-dev bzip2
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y dpkg-dev bzip2 xz-utils
 
-      - name: Update Packages File
+      - name: Generate Packages
         run: |
-          rm -f Packages Packages.bz2
           dpkg-scanpackages -m ./debs > Packages
-          bzip2 -c Packages > Packages.bz2
+          bzip2 -c9 Packages > Packages.bz2
+          xz -c9 Packages > Packages.xz
+          xz -5fkev --format=lzma Packages > Packages.lzma
 
-      - name: Force Push Changes
+      - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add Packages Packages.bz2
-          git commit -m "Update Repo Index [skip ci]" || echo "No changes"
-          
-          # هذا السطر هو الحل لخطأ 128: يمسح التعارض ويرفع بالقوة
-          git push origin main --force
+          git add Packages Packages.bz2 Packages.xz Packages.lzma
+          git commit -m "Auto-update Packages" || echo "No changes to commit"
+          git push
