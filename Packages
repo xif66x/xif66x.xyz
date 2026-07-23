@@ -1,19 +1,3 @@
-Package: com.xif66x.andm
-Version: 2.5
-Architecture: iphoneos-arm64e
-Maintainer: insta:xif66x
-Installed-Size: 232
-Depends: mobilesubstrate (>= 0.9.5000)
-Filename: ./debs/com.xif66x.andm_2.5_iphoneos-arm64e.deb
-Size: 71050
-MD5sum: 0ca13bcc0bc2a72bf10320a80fb95beb
-SHA1: e5711ad230d21df5fabb7eb5726024bac78edae5
-SHA256: 9a04095ac64aac16a23d124b2166f9004ca3bbda5e7707af86ccd80c5099c494
-Section: Tweaks
-Description: إضافات لتطبيق ANDM
-Author: yousef
-Name: ANDM
-
 Package: com.xif66x.dramatr
 Version: 1.0+debug
 Architecture: iphoneos-arm64
