@@ -1,3 +1,51 @@
+Package: com.xif66x.andm
+Version: 2.0
+Architecture: iphoneos-arm64e
+Maintainer: insta:xif66x
+Installed-Size: 264
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/ANDM_RootFull.deb
+Size: 75440
+MD5sum: 215c0efbc2a1088c35f2c31c00ca4db6
+SHA1: 4e551ac5161d56d68818ba3e230bfd1195e3576e
+SHA256: 138dfdf6cb3e024b6b7a84805a190e3903e7add74f51efc9233635805b140790
+Section: Tweaks
+Description: إضافات لتطبيق ANDM
+Author: yousef
+Name: ANDM
+
+Package: com.xif66x.andm
+Version: 2.0
+Architecture: iphoneos-arm64e
+Maintainer: insta:xif66x
+Installed-Size: 264
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/ANDM_Roothide.deb
+Size: 75468
+MD5sum: b48cf77f6a4aba32351486cd28ec2157
+SHA1: 5ee089d0cb024930de28a15b3694902a39bb8078
+SHA256: 99f52e33405583eb3ea68268f36f8dc19c7a9332a55c758e776f9a1cfc1e1d82
+Section: Tweaks
+Description: إضافات لتطبيق ANDM
+Author: yousef
+Name: ANDM
+
+Package: com.xif66x.andm
+Version: 2.0
+Architecture: iphoneos-arm64
+Maintainer: insta:xif66x
+Installed-Size: 264
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/ANDM_Rootless.deb
+Size: 75542
+MD5sum: 3b96e054bb86c4f7f92e05a3edab9670
+SHA1: 0edd7b4e76dcbffb3b7c8d41bcc39c9cd3e2c778
+SHA256: 5ca93ca20678effbfe20403f57529919c3e952a4cfddbdc260f138f5b353e2e8
+Section: Tweaks
+Description: إضافات لتطبيق ANDM
+Author: yousef
+Name: ANDM
+
 Package: com.xif66x.dramatr
 Version: 1.0+debug
 Architecture: iphoneos-arm64
