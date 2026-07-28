@@ -62,6 +62,38 @@ Description: Ø¥Ø²Ø§ÙØ© Ø§ÙØ§Ø¹ÙØ§ÙØ§Øª ÙÙ 
 Author: xif66x <insta@xif66x>
 Name: dramaTr
 
+Package: com.xif66x.instaarabic
+Version: 5.0.0
+Architecture: iphoneos-arm64e
+Maintainer: yousef alhadidi
+Installed-Size: 352
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/instaarabicRootHaide.deb
+Size: 106280
+MD5sum: e42e543d0e7bc24ca7a28a0a7153d7dd
+SHA1: ec8c2158244587caa1b9a4a10ed11bf0668a5319
+SHA256: c83d25d42e2f7b4ebd4ebb15c6de1ee91b16cd23701e9742eb5adb634c703eeb
+Section: Tweaks
+Description: تعريب تطبيق انستجرام((@.@)
+Author: xif66x
+Name: instaArabic
+
+Package: com.xif66x.xif66xac
+Version: 0.0.2
+Architecture: iphoneos-arm64e
+Maintainer: yousef
+Installed-Size: 240
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/xif66xacRootHaide.deb
+Size: 88436
+MD5sum: 3695a25c9246dd19c68ca85838b2d15c
+SHA1: 10dbb32bc86a34a1a9b43d4897a8d64952461581
+SHA256: cff7dfbc24be159f1361eeb685ee96d4d5e080631a793a37a97c6d1ef29ddc05
+Section: Tweaks
+Description: An awesome MobileSubstrate tweak!
+Author: yousef
+Name: xif66xAC
+
 Package: com.yousefalhadidi.animecloud
 Version: 1.0+debug
 Architecture: iphoneos-arm64
