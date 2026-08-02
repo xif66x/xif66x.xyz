@@ -79,16 +79,16 @@ Author: yousef
 Name: xif66xAC
 
 Package: com.xif66x.xif66xtk
-Version: 1.0
+Version: 2.0
 Architecture: iphoneos-arm64e
 Maintainer: yousef insta xif66x
 Installed-Size: 288
 Depends: mobilesubstrate (>= 0.9.5000)
-Filename: ./debs/com.xif66x.xif66xtk_1.0_iphoneos-arm64e.deb
-Size: 92956
-MD5sum: e8fcd4869ff7297d86700afcff2fdd0a
-SHA1: 97f9a485bc9548f9f921ee25218b645cbd29557a
-SHA256: 779be8d7c135db6bffef0f5b0b165d9a919cde3d8bcdc0a97b326f30af7610e7
+Filename: ./debs/com.xif66x.xif66xtk_2.0_iphoneos-arm64e.deb
+Size: 96548
+MD5sum: 28c43f158082bfc7b11bd9449ad3acb5
+SHA1: 873c1c61ef29f35f0f3a5d50f9dbb5f53c0ac107
+SHA256: 8bea6184a193832d40b49d34564768ab6a5664f60f54e61f9a82e71d1ffe7147
 Section: Tweaks
 Description: إضافة مميزات لتطبيق التيك توك
 Author: yousef
