@@ -62,6 +62,22 @@ Description: تعريب تطبيق انستجرام((@.@)
 Author: xif66x
 Name: instaArabic
 
+Package: com.xif66x.test
+Version: 0.0.1
+Architecture: iphoneos-arm64e
+Maintainer: yousef
+Installed-Size: 0
+Depends: com.spark.snowboard
+Filename: ./debs/com.xif66x.test_0.0.1_iphoneos-arm64e.deb
+Size: 668
+MD5sum: 1b8b9d3d5e1efe21d57861ad58de109f
+SHA1: abcf8b835bf789af2b2829eab1076189ac12a206
+SHA256: 9483a21709cd027858246a5ff6096295a3aa342f91cfa6b0437c53c95a0e50ec
+Section: Themes
+Description: An awesome theme of some sort!!
+Author: me
+Name: test
+
 Package: com.xif66x.xif66xac
 Version: 0.0.2
 Architecture: iphoneos-arm64e
