@@ -110,6 +110,22 @@ Description: An awesome MobileSubstrate tweak!
 Author: yousef
 Name: xif66xAC
 
+Package: com.xif66x.xif66xac
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Maintainer: yousef
+Installed-Size: 144
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/xif66xacroot.deb
+Size: 85182
+MD5sum: c1d669741a5b77110a4a5332b03fb268
+SHA1: 72bcd0330d2edd09e8f0369beec4fa1108826f30
+SHA256: 1bf455ff6070f74572dd45f0133205b2210c6c81a3eb8ed4de7df048a5d92ea5
+Section: Tweaks
+Description: تعديل بتطبيق انمي كلاود
+Author: yousef
+Name: xif66xAC
+
 Package: com.xif66x.xif66xtk
 Version: 2.0
 Architecture: iphoneos-arm64
