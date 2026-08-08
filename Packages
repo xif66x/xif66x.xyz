@@ -96,6 +96,22 @@ Name: xif66xAC
 
 Package: com.xif66x.xif66xtk
 Version: 2.0
+Architecture: iphoneos-arm64
+Maintainer: yousef insta xif66x
+Installed-Size: 176
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/xif66xtkRootls.deb
+Size: 90304
+MD5sum: 7ea887df4cbe1c5cfabb2dbf750d69ed
+SHA1: af7bc7de5ae2afb8a37ddddea5f5e48ec867b947
+SHA256: cc1b653b5ea82ebdbea76c470fb0628e46b347551923341d164257336e65eb70
+Section: Tweaks
+Description: إضافة مميزات لتطبيق التيك توك
+Author: yousef
+Name: xif66xTK
+
+Package: com.xif66x.xif66xtk
+Version: 2.0
 Architecture: iphoneos-arm64e
 Maintainer: yousef insta xif66x
 Installed-Size: 288
