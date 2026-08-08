@@ -50,6 +50,22 @@ Package: com.xif66x.instaarabic
 Version: 5.0.0
 Architecture: iphoneos-arm64e
 Maintainer: yousef alhadidi
+Installed-Size: 192
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/instaarabicroot.deb
+Size: 98470
+MD5sum: 42e9bfd4d55bc586bbbd649a41841d7a
+SHA1: e700dee7875bad9c5c1915cbf7189bf476836f91
+SHA256: de6f79585c71c767ff3072ce7d4f3eda94e255b58e95b773d9a4d2eb58aab1c0
+Section: Tweaks
+Description: تعريب تطبيق انستجرام((@.@)
+Author: xif66x
+Name: instaArabic
+
+Package: com.xif66x.instaarabic
+Version: 5.0.0
+Architecture: iphoneos-arm64e
+Maintainer: yousef alhadidi
 Installed-Size: 352
 Depends: mobilesubstrate (>= 0.9.5000)
 Filename: ./debs/instaarabicRootHaide.deb
