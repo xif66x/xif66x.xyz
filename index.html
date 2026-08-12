@@ -1,150 +1,739 @@
 <!DOCTYPE html>
-<html dir="rtl" lang="ar">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="Content-Language" content="en-us">
-  <meta name="description" content="Made by xif66x">
-  <title>xif66x Repo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yousef Al-Hadidi | xif66x</title>
+    <!-- Modern Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Syncopate:wght@700&family=Space+Mono&display=swap" rel="stylesheet">
+    <!-- Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Dark and professional colors */
+            --bg-dark: #0b0c10;
+            --card-bg: #15161d;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --accent-color: #6366f1; /* Deep Indigo */
+            --accent-glow: rgba(99, 102, 241, 0.3);
+            --border-color: rgba(255, 255, 255, 0.06);
+            
+            /* Repo Colors */
+            --repo-sileo: #007aff;
+            --repo-zebra: #2c2c2e;
+            --repo-cydia: #8c7355;
+            
+            --font-main: 'Cairo', sans-serif;
+            --font-logo: 'Syncopate', sans-serif; /* Extended modern font */
+        }
 
-  <style>
-    body {
-      background-color: #1e1e1e;
-      font-family: 'Consolas', monospace;
-      color: #f5f5f5;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-    .fade {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 50% 0%, #171926, #0b0c10 70%);
+            transition: all 0.3s ease;
+        }
 
-    .fade.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+        /* Language Toggle Button */
+        .lang-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: var(--font-main);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
 
-    .header {
-      margin-top: 30px;
-      font-size: 24px;
-      font-weight: bold;
-      color: #f1c40f;
-    }
+        /* Adjust position for RTL */
+        html[dir="rtl"] .lang-toggle {
+            right: auto;
+            left: 20px;
+        }
 
-    .highlight {
-      background-color: #2c3e50;
-      padding: 6px 12px;
-      border-radius: 6px;
-      color: #ffffff;
-      display: inline-block;
-      margin: 10px 0;
-    }
+        .lang-toggle:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
 
-    .gif-img {
-      max-width: 90%;
-      border-radius: 12px;
-      margin: 20px 0;
-      box-shadow: 0 0 12px #00000088;
-    }
+        /* --- Profile Image --- */
+        .profile-image-container {
+            margin-top: 4rem;
+            position: relative;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, var(--accent-color), #3b82f6);
+            box-shadow: 0 0 25px var(--accent-glow);
+        }
 
-    .quote {
-      background-color: #27ae60;
-      padding: 12px 18px;
-      border-radius: 8px;
-      display: inline-block;
-      font-size: 18px;
-      margin-top: 20px;
-    }
+        .profile-image-container img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #1a1a2e;
+            border: 4px solid var(--bg-dark);
+        }
 
-    .social {
-      margin: 25px 0;
-    }
+        /* --- Glitch / Logo Text --- */
+        .glitch-wrapper {
+            position: relative;
+            text-align: center;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .logo-text {
+            font-family: var(--font-logo);
+            font-size: 2.2rem; /* Smaller size */
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 6px; /* Stretched */
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            text-shadow: 0 0 10px rgba(255,255,255,0.2);
+        }
 
-    .social a {
-      margin: 0 8px;
-      background-color: #34495e;
-      color: white;
-      padding: 6px 12px;
-      border-radius: 5px;
-      text-decoration: none;
-      display: inline-block;
-    }
+        /* Adding a subtle glitch effect to the new font */
+        .logo-text::before, .logo-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+        }
+        
+        .logo-text::before {
+            left: 2px;
+            text-shadow: -2px 0 #6366f1;
+            clip: rect(24px, 550px, 90px, 0);
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+        
+        .logo-text::after {
+            left: -2px;
+            text-shadow: -2px 0 #3b82f6;
+            clip: rect(85px, 550px, 140px, 0);
+            animation: glitch-anim 2.5s infinite linear alternate-reverse;
+        }
 
-    .repo-buttons a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      color: white;
-    }
+        @keyframes glitch-anim {
+            0% { clip: rect(10px, 9999px, 31px, 0); }
+            20% { clip: rect(62px, 9999px, 14px, 0); }
+            40% { clip: rect(34px, 9999px, 89px, 0); }
+            60% { clip: rect(96px, 9999px, 53px, 0); }
+            80% { clip: rect(12px, 9999px, 76px, 0); }
+            100% { clip: rect(81px, 9999px, 19px, 0); }
+        }
+        @keyframes glitch-anim-2 {
+            0% { clip: rect(65px, 9999px, 100px, 0); }
+            20% { clip: rect(12px, 9999px, 56px, 0); }
+            40% { clip: rect(87px, 9999px, 21px, 0); }
+            60% { clip: rect(43px, 9999px, 78px, 0); }
+            80% { clip: rect(23px, 9999px, 91px, 0); }
+            100% { clip: rect(54px, 9999px, 34px, 0); }
+        }
 
-    .sileo { background-color: #2ecc71; }
-    .zebra { background-color: #3498db; }
-    .cydia { background-color: #e67e22; }
+        /* --- Profile Container --- */
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
 
-    footer {
-      margin-top: 40px;
-      font-size: 14px;
-      color: #999;
-    }
-  </style>
+        .quotes {
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            background: var(--card-bg);
+            padding: 15px 25px;
+            border-radius: 12px;
+            border-left: 3px solid var(--accent-color);
+            border-right: none;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
 
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const elements = document.querySelectorAll('.fade');
-      elements.forEach((el, index) => {
-        setTimeout(() => {
-          el.classList.add('show');
-        }, index * 500); 
-      });
-    });
-  </script>
+        html[dir="rtl"] .quotes {
+            border-right: 3px solid var(--accent-color);
+            border-left: none;
+        }
+
+        /* --- Grid & Cards --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+
+        /* --- Accordion Design --- */
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.01);
+            transition: background 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        /* Flex direction adjustment based on RTL/LTR */
+        html[dir="rtl"] .header-title {
+            flex-direction: row;
+        }
+        html[dir="ltr"] .header-title {
+            flex-direction: row;
+        }
+        
+        .header-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-title i {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            width: 35px;
+            text-align: center;
+        }
+
+        .header-title h2 {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            font-weight: 800;
+        }
+
+        .arrow {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .accordion-header.active .arrow {
+            transform: rotate(180deg);
+            color: var(--accent-color);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background: rgba(0, 0, 0, 0.15);
+        }
+
+        .content-inner {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            margin-top: 10px;
+            padding-top: 15px;
+        }
+
+        .content-inner ul {
+            list-style: none;
+        }
+
+        .content-inner ul li {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+        }
+
+        .content-inner ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Icon margins depend on direction */
+        html[dir="rtl"] .content-inner ul li i {
+            margin-left: 15px;
+            margin-right: 0;
+        }
+        html[dir="ltr"] .content-inner ul li i {
+            margin-right: 15px;
+            margin-left: 0;
+        }
+
+        .content-inner ul li i {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            width: 25px;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        /* --- Repo Section --- */
+        .repo-section {
+            grid-column: 1 / -1;
+        }
+
+        .repo-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .btn-repo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-sileo { background-color: var(--repo-sileo); }
+        .btn-zebra { background-color: var(--repo-zebra); }
+        .btn-cydia { background-color: var(--repo-cydia); }
+
+        .btn-repo:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.1);
+        }
+
+        .tweaks-title {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+        }
+
+        .tweaks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+        }
+
+        .tweak-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tweak-btn i {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .tweak-btn:hover {
+            background: rgba(99, 102, 241, 0.15);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* --- Social Links --- */
+        .social-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            background: var(--card-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-primary);
+            font-size: 1.4rem;
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent-color);
+            color: #fff;
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            box-shadow: 0 5px 15px var(--accent-glow);
+        }
+
+        /* --- Footer --- */
+        footer {
+            margin-top: auto;
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            width: 100%;
+            background: rgba(0,0,0,0.4);
+            line-height: 1.8;
+        }
+
+        /* Multi-language Support Display Logic */
+        .lang-ar { display: none; }
+        html[dir="rtl"] .lang-ar { display: inline-block; }
+        html[dir="rtl"] .lang-en { display: none; }
+        
+        /* For block elements */
+        html[dir="rtl"] div.lang-ar, 
+        html[dir="rtl"] p.lang-ar, 
+        html[dir="rtl"] h2.lang-ar { display: block; }
+
+        html[dir="ltr"] div.lang-en, 
+        html[dir="ltr"] p.lang-en, 
+        html[dir="ltr"] h2.lang-en { display: block; }
+    </style>
 </head>
-
 <body>
 
-  <div class="header fade">
-    &gt; <span class="highlight">Made by Yousef (xif66x)</span> &lt;
-  </div>
+    <!-- Language Toggle -->
+    <button class="lang-toggle" onclick="toggleLanguage()">
+        <i class="fa-solid fa-globe"></i>
+        <span class="lang-en">عربي</span>
+        <span class="lang-ar">English</span>
+    </button>
 
-  
-  <img class="gif-img fade" src="https://l.top4top.io/p_3623m7v5q0.jpeg" alt="Glitch animation">
+    <!-- Profile Image -->
+    <div class="profile-image-container">
+        <img src="https://l.top4top.io/p_3623m7v5q0.jpeg" alt="Yousef Al-Hadidi (xif66x)">
+    </div>
 
-  
-  <p class="fade" style="font-size: 20px;">مرحباً، <span class="highlight">Hello</span></p>
-  <p class="fade" style="font-size: 16px;">With love . <span class="highlight"> All this was made</span></p>
+    <!-- Header & Name -->
+    <div class="glitch-wrapper">
+        <h1 class="logo-text" data-text="xif66x">xif66x</h1>
+    </div>
 
-  
-  <p class="quote fade">
-    قد تنظر لما أنظر، ولكنك لا ترى ما أرى.
-  </p>
+    <!-- Profile Info & Quotes -->
+    <div class="profile-container">
+        <div class="subtitle">Made by Yousef Al-Hadidi</div>
+        <div class="quotes">
+            <span class="lang-en">"You may look at what I look at, but you don't see what I see"<br>"People's opinions don't matter as long as your actions give you a clear conscience"</span>
+            <span class="lang-ar">"قد تنظر لما أنظر، ولكنك لا ترى ما أرى"<br>"لا قيمة لآراء الناس مادامت أفعالك تمنحك ضميرًا مريحًا"</span>
+        </div>
+    </div>
 
-  
-  <div class="social fade">
-    <a href="https://www.instagram.com/xif66x" target="_blank">📷 Instagram: @xif66x</a>
-    <a href="https://mobile.twitter.com/alfaylasoof95" target="_blank">🐦 Twitter: @alfaylasoof95</a>
-  </div>
+    <!-- Grid Container -->
+    <div class="grid-container">
 
-  
-  <div class="repo-buttons fade">
-    <a href="sileo://source/https://xif66x.xyz" class="sileo">🧬 Add to Sileo</a>
-    <a href="zbra://sources/add/https://xif66x.xyz" class="zebra">🦓 Add to Zebra</a>
-    <a href="cydia://url/https://xif66x.xyz" class="cydia">📦 Add to Cydia</a>
-  </div>
+        <!-- About Me -->
+        <div class="card">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="header-title">
+                    <i class="fa-solid fa-address-card"></i>
+                    <h2 class="lang-en">About Me</h2>
+                    <h2 class="lang-ar">نبذة عني</h2>
+                </div>
+                <i class="fa-solid fa-chevron-down arrow"></i>
+            </div>
+            <div class="accordion-content">
+                <div class="content-inner">
+                    <ul>
+                        <li><i class="fa-solid fa-user"></i> 
+                            <strong class="lang-en">Name:</strong> <span class="lang-en">Yousef Al-Hadidi</span>
+                            <strong class="lang-ar">الاسم:</strong> <span class="lang-ar">يوسف الحديدي</span>
+                        </li>
+                        <li><i class="fa-solid fa-calendar-days"></i> 
+                            <strong class="lang-en">DOB:</strong> <span class="lang-en">October 28</span>
+                            <strong class="lang-ar">تاريخ الميلاد:</strong> <span class="lang-ar">28 أكتوبر</span>
+                        </li>
+                        <li><i class="fa-solid fa-location-dot"></i> 
+                            <strong class="lang-en">Location:</strong> <span class="lang-en">Muscat, Oman</span>
+                            <strong class="lang-ar">الموقع:</strong> <span class="lang-ar">مسقط، سلطنة عُمان</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-  
-  <p class="highlight fade" style="margin-top: 30px; font-size: 18px;">
-    لا قيمة لآراء الناس مادامت أفعالك تمنحك ضميرًا مريحًا.
-  </p>
+        <!-- Skills -->
+        <div class="card">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="header-title">
+                    <i class="fa-solid fa-code"></i>
+                    <h2 class="lang-en">Skills</h2>
+                    <h2 class="lang-ar">المهارات</h2>
+                </div>
+                <i class="fa-solid fa-chevron-down arrow"></i>
+            </div>
+            <div class="accordion-content">
+                <div class="content-inner">
+                    <ul>
+                        <li><i class="fa-solid fa-terminal"></i> 
+                            <span class="lang-en">Jailbreak Tweak Development</span>
+                            <span class="lang-ar">تطوير وصناعة إضافات الجيلبريك</span>
+                        </li>
+                        <li><i class="fa-solid fa-microchip"></i> 
+                            <span class="lang-en">Reverse Engineering</span>
+                            <span class="lang-ar">الهندسة العكسية (Reverse Engineering)</span>
+                        </li>
+                        <li><i class="fa-solid fa-window-maximize"></i> 
+                            <span class="lang-en">Web UI Development (HTML, CSS, JS)</span>
+                            <span class="lang-ar">تطوير واجهات الويب (HTML, CSS, JS)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-  <footer class="fade">
-    &copy; 2016-2026 xif66x – جميع الحقوق محفوظة
-  </footer>
+        <!-- Tools & Environment -->
+        <div class="card">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="header-title">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h2 class="lang-en">Tools & Environment</h2>
+                    <h2 class="lang-ar">الأدوات وبيئة العمل</h2>
+                </div>
+                <i class="fa-solid fa-chevron-down arrow"></i>
+            </div>
+            <div class="accordion-content">
+                <div class="content-inner">
+                    <ul>
+                        <li><i class="fa-brands fa-apple"></i> iOS Jailbreak (Dopamine, RootHide)</li>
+                        <li><i class="fa-solid fa-layer-group"></i> Theos & Orion</li>
+                        <li><i class="fa-brands fa-linux"></i> 
+                            <span class="lang-en">Linux OS</span>
+                            <span class="lang-ar">نظام تشغيل Linux</span>
+                        </li>
+                        <li><i class="fa-brands fa-windows"></i> 
+                            <span class="lang-en">Windows OS</span>
+                            <span class="lang-ar">نظام تشغيل Windows</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
+        <!-- Hobbies & Console Modding -->
+        <div class="card">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="header-title">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <h2 class="lang-en">Hobbies & Modding</h2>
+                    <h2 class="lang-ar">الهوايات</h2>
+                </div>
+                <i class="fa-solid fa-chevron-down arrow"></i>
+            </div>
+            <div class="accordion-content">
+                <div class="content-inner">
+                    <ul>
+                        <li><i class="fa-brands fa-playstation"></i> 
+                            <span class="lang-en">PlayStation 5 Modding</span>
+                            <span class="lang-ar">تعديل جهاز PlayStation 5</span>
+                        </li>
+                        <li><i class="fa-brands fa-playstation"></i> 
+                            <span class="lang-en">PlayStation 4 Modding</span>
+                            <span class="lang-ar">تعديل جهاز PlayStation 4</span>
+                        </li>
+                        <li><i class="fa-brands fa-playstation"></i> 
+                            <span class="lang-en">PlayStation 3 Modding</span>
+                            <span class="lang-ar">تعديل جهاز PlayStation 3</span>
+                        </li>
+                        <li><i class="fa-solid fa-compact-disc"></i> 
+                            <span class="lang-en">PSP Modding</span>
+                            <span class="lang-ar">تعديل جهاز PSP</span>
+                        </li>
+                        <li><i class="fa-solid fa-toggle-off"></i> 
+                            <span class="lang-en">Nintendo Switch Modding</span>
+                            <span class="lang-ar">تعديل جهاز Nintendo Switch</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Repo & Tweaks -->
+        <div class="card repo-section">
+            <div class="accordion-header active" onclick="toggleAccordion(this)">
+                <div class="header-title">
+                    <i class="fa-solid fa-box-archive"></i>
+                    <h2 class="lang-en">My Tweaks & Repo</h2>
+                    <h2 class="lang-ar">أدواتي</h2> 
+                </div>
+                <i class="fa-solid fa-chevron-down arrow"></i>
+            </div>
+            <div class="accordion-content" style="max-height: 1000px;"> <!-- Open by default -->
+                <div class="content-inner">
+                    <p class="lang-en" style="color: var(--text-secondary); text-align: center; margin-bottom: 1.5rem;">Add my repo to download the latest tweaks and modifications.</p>
+                    <p class="lang-ar" style="color: var(--text-secondary); text-align: center; margin-bottom: 1.5rem;">أضف السورس الخاص بي لتحميل أحدث الإضافات والتعديلات.</p>
+                    
+                    <div class="repo-buttons">
+                        <a href="sileo://source/https://xif66x.xyz/" class="btn-repo btn-sileo">
+                            <i class="fa-solid fa-bolt"></i> Add to Sileo
+                        </a>
+                        <a href="zbra://sources/add/https://xif66x.xyz/" class="btn-repo btn-zebra">
+                            <i class="fa-solid fa-horse-head"></i> Add to Zebra
+                        </a>
+                    </div>
+
+                    <div class="tweaks-title lang-en">Direct Installation (Sileo)</div>
+                    <div class="tweaks-title lang-ar"> تحميل مباشر  (Sileo)</div>
+                    <div class="tweaks-grid">
+                        <a href="sileo://package/com.xif66x.andm" class="tweak-btn">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                            ANDM
+                        </a>
+                        <a href="sileo://package/com.xif66x.instaarabic" class="tweak-btn">
+                            <i class="fa-brands fa-instagram"></i>
+                            Instaarabic
+                        </a>
+                        <a href="sileo://package/com.xif66x.xif66xtk" class="tweak-btn">
+                            <i class="fa-brands fa-tiktok"></i>
+                            xif66xTK
+                        </a>
+                        <a href="sileo://package/com.xif66x.xif66xac" class="tweak-btn">
+                            <i class="fa-solid fa-film"></i>
+                            xif66xAC
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Social Links -->
+    <div class="social-container">
+        <a href="https://twitter.com/alfaylasoof95" target="_blank" class="social-link" title="Twitter">
+            <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="https://instagram.com/xif66x" target="_blank" class="social-link" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2016-2026 xif66x – 
+        <span class="lang-en">All Rights Reserved</span>
+        <span class="lang-ar">جميع الحقوق محفوظة</span>
+        <br>
+        <span style="font-style: italic; opacity: 0.6;">With love . All this was made</span>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        function toggleAccordion(element) {
+            const content = element.nextElementSibling;
+            element.classList.toggle('active');
+
+            if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+                content.style.maxHeight = "0px";
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+
+        // Initialize default open accordion
+        window.addEventListener('DOMContentLoaded', () => {
+            const activeHeaders = document.querySelectorAll('.accordion-header.active');
+            activeHeaders.forEach(header => {
+                const content = header.nextElementSibling;
+                content.style.maxHeight = content.scrollHeight + "px";
+            });
+        });
+
+        // Language Toggle Logic
+        function toggleLanguage() {
+            const htmlTag = document.documentElement;
+            if (htmlTag.getAttribute('dir') === 'ltr') {
+                // Switch to Arabic
+                htmlTag.setAttribute('dir', 'rtl');
+                htmlTag.setAttribute('lang', 'ar');
+            } else {
+                // Switch to English
+                htmlTag.setAttribute('dir', 'ltr');
+                htmlTag.setAttribute('lang', 'en');
+            }
+            
+            // Re-calculate heights for open accordions after layout change
+            setTimeout(() => {
+                const activeHeaders = document.querySelectorAll('.accordion-header.active');
+                activeHeaders.forEach(header => {
+                    const content = header.nextElementSibling;
+                    content.style.maxHeight = content.scrollHeight + "px";
+                });
+            }, 50);
+        }
+    </script>
 </body>
 </html>
